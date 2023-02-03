@@ -6,6 +6,7 @@ import {fontSizes, fontWeights} from '../constants/ui';
 import {Text} from 'react-native';
 import SignInScreen from './SignIn';
 import Input from '../components/Input';
+import normalize from 'react-native-normalize';
 
 const Welcome = props => {
   const {authenticate} = props;
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
     justifyContent: 'center',
-    padding: 40,
+    padding: normalize(40),
     flex: 1,
   },
 
@@ -72,18 +73,18 @@ const styles = StyleSheet.create({
   },
 
   body: {
-    marginTop: 20,
+    marginTop: normalize(20, 'height'),
   },
 
   bodyText: {
     fontSize: fontSizes.normal,
-    marginBottom: 10,
+    marginBottom: normalize(10, 'height'),
     fontWeight: fontWeights.semiBold,
   },
 
   footer: {
     flex: 1,
-    padding: 20,
+    padding: normalize(20),
   },
 });
 

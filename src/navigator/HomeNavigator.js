@@ -1,30 +1,19 @@
 import React, {useState} from 'react';
 import {Appbar, FAB} from 'react-native-paper';
-import Allergies from './components/Allergies';
-import AllergyDetails from './components/AllergyDetails';
-
-import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import AllergyForm from './components/AllergyForm';
 
-// RootNavigation.js
+import {
+  createNavigationContainerRef,
+  NavigationContainer,
+} from '@react-navigation/native';
 
-import {createNavigationContainerRef} from '@react-navigation/native';
+import Allergies from '../screens/home/Allergies';
+import AllergyForm from '../screens/home/AllergyForm';
+import AllergyDetails from '../screens/home/AllergyDetails';
+
+import {navigate} from '../utils/ui';
 
 export const navigationRef = createNavigationContainerRef();
-
-/**
- *
- * @param {string} name
- * @param {Object} params
- */
-export function navigate(name, params) {
-  if (!navigationRef.isReady()) {
-    return;
-  }
-
-  navigationRef.navigate(name, params);
-}
 
 const Stack = createStackNavigator();
 
@@ -47,7 +36,7 @@ const CustomNavigationBar = props => {
   );
 };
 
-export default function Home() {
+export default function HomeNavigator() {
   const [showFabIcon, setShowFabIcon] = useState(true);
 
   return (
@@ -88,7 +77,7 @@ export default function Home() {
           icon="plus"
           label="Add Allergy"
           size="small"
-          onPress={() => navigate(allergyRoutes.CREATE_ALLERGY)}
+          onPress={() => navigate(navigationRef, allergyRoutes.CREATE_ALLERGY)}
         />
       )}
     </NavigationContainer>
