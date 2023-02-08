@@ -6,10 +6,10 @@
  * @flow strict-local
  */
 
-import Navigator from './Navigator';
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import Welcome from './screens/Welcome';
+import Navigator from './navigator/MainNavigator';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's

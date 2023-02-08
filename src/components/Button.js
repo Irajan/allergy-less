@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, IconButton} from 'react-native-paper';
 import {View, StyleSheet} from 'react-native';
+import normalize from 'react-native-normalize';
 
 const DEFAULT_BORDER_RADIUS = 5;
 
@@ -48,7 +49,7 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: DEFAULT_BORDER_RADIUS,
+    borderRadius: normalize(DEFAULT_BORDER_RADIUS),
   },
 });
 

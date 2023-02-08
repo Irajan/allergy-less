@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Home from './screens/home';
-import Profile from './screens/profile';
+import Profile from '../screens/profile';
+import HomeNavigator from './HomeNavigator';
 import {BottomNavigation, Text} from 'react-native-paper';
-import {buttonNavigationKeys} from './constants/navigation';
+import {buttonNavigationKeys} from '../constants/navigation';
 
 const ROUTES = [
   {
@@ -19,11 +19,11 @@ const ROUTES = [
   },
 ];
 
-const Navigator = props => {
+const MainNavigator = props => {
   const [index, setIndex] = React.useState(0);
 
   const renderScene = BottomNavigation.SceneMap({
-    [buttonNavigationKeys.HOME]: Home,
+    [buttonNavigationKeys.HOME]: HomeNavigator,
     [buttonNavigationKeys.PROFILE]: p => <Profile {...p} {...props} />,
   });
 
@@ -36,4 +36,4 @@ const Navigator = props => {
   );
 };
 
-export default Navigator;
+export default MainNavigator;

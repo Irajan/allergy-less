@@ -4,6 +4,7 @@ import {RadioButton, TextInput, Text} from 'react-native-paper';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 import {isObjectEmpty} from '../utils/object';
+import normalize from 'react-native-normalize';
 
 const ImageView = props => {
   const {label, value} = props;
@@ -132,9 +133,9 @@ const Input = props => {
 
 const styles = StyleSheet.create({
   fieldSet: {
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 10,
+    padding: normalize(10),
+    borderRadius: normalize(5),
+    marginBottom: normalize(10),
     borderWidth: 1,
   },
   fieldSetValid: {
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   dropzone: {
-    height: 150,
+    height: normalize(150, 'height'),
     borderStyle: 'dashed',
     borderColor: '#888',
     backgroundColor: 'white',
@@ -170,12 +171,12 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 150,
-    height: 150,
+    width: normalize(150, 'width'),
+    height: normalize(150, 'height'),
   },
 
   container: {
-    marginVertical: 10,
+    marginVertical: normalize(10, 'height'),
     flex: 1,
     display: 'flex',
   },
